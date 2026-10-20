@@ -108,7 +108,7 @@ jobs:
       - name: Run Marvin for Issue Triage
         uses: anthropics/claude-code-action@v1
         with:
-          github_token: ${{ steps.marvin-token.outputs.token }}
+          github_token: ${{ github.token }}
           bot_name: "Marvin Context Protocol"
           prompt: ${{ steps.triage-prompt.outputs.PROMPT }}
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY_FOR_CI }}
@@ -120,6 +120,6 @@ jobs:
             {
               "model": "claude-sonnet-4-6",
               "env": {
-                "GH_TOKEN": "${{ steps.marvin-token.outputs.token }}"
+                "GH_TOKEN": "${{ github.token }}"
               }
             }
