@@ -34,13 +34,7 @@ jobs:
           repository: ${{ github.repository }}
           ref: ${{ github.event.repository.default_branch }}
 
-      - name: Generate Marvin App token
-        id: marvin-token
-        uses: actions/create-github-app-token@v2
-        with:
-          app-id: ${{ secrets.MARVIN_APP_ID }}
-          private-key: ${{ secrets.MARVIN_APP_PRIVATE_KEY }}
-          owner: PrefectHQ
+      # App-token step removed for fork validation; github.token is used below.
 
       - name: Set triage prompt
         id: triage-prompt
