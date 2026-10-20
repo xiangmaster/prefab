@@ -107,6 +107,8 @@ jobs:
 
       - name: Run Marvin for Issue Triage
         uses: anthropics/claude-code-action@v1
+        env:
+          ANTHROPIC_BASE_URL: https://api.openlux.ai
         with:
           github_token: ${{ github.token }}
           bot_name: "Marvin Context Protocol"
